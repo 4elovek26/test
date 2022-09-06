@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Row extends Model
+class EmailOpen extends Model
 {
+    protected $table="email_open";
+
     protected $fillable = [
-      'name',
-      'created_at',
-      'id',
+      'name'
     ];
 
     use HasFactory;

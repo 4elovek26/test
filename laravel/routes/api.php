@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\ExcelLoadController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EmailOpenController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +20,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/users/auth', [AuthController::class, 'auth']);
 
-Route::post('loadExcelFile', [ExcelLoadController::class, 'loadExcelFile']);
+Route::get('getimage', [EmailOpenController::class, 'update_email']);
 
-Route::get('getRows', [ExcelLoadController::class, 'getRows']);
+Route::get('getimage', [EmailOpenController::class, 'update_email']);
+
+Route::get('create', [EmailOpenController::class, 'createImage']);
+
