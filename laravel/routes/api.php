@@ -20,7 +20,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/users/auth', [AuthController::class, 'auth']);
+
+Route::group(['middleware' => ['web']], function () {
+    Route::get('/users/auth', [AuthController::class, 'auth']);
+    Route::get('/users/yauth', [AuthController::class, 'yauth']);
+});
+
+
+
 
 Route::get('getimage', [EmailOpenController::class, 'update_email']);
 

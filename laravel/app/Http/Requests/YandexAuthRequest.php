@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ExcelRequest extends FormRequest
+class YandexAuthRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class ExcelRequest extends FormRequest
     public function rules()
     {
         return [
-            'excel' => 'file|required',
+            'access_token' => 'string|required'
         ];
     }
 }
